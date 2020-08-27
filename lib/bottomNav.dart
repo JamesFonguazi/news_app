@@ -33,29 +33,115 @@ class _BottomNavState extends State<BottomNav> {
       body: SafeArea(
         child: _bottomNavView.elementAt(_selectedIndex),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.white,
-        currentIndex: _selectedIndex,
-        showSelectedLabels: false,
-        showUnselectedLabels: false,
-        type: BottomNavigationBarType.fixed,
-        onTap: _onItemTapped,
-        items: _navBarList
-            .map(
-              (e) => BottomNavigationBarItem(
-                icon: SvgPicture.asset(
-                  e.icon,
-                  width: 24.0,
+      bottomNavigationBar: BottomAppBar(
+          clipBehavior: Clip.antiAliasWithSaveLayer,
+          shape: CircularNotchedRectangle(),
+          child: BottomNavigationBar(
+            backgroundColor: Colors.white,
+            currentIndex: _selectedIndex,
+            showSelectedLabels: false,
+            showUnselectedLabels: false,
+            type: BottomNavigationBarType.fixed,
+            onTap: _onItemTapped,
+            items: [
+              BottomNavigationBarItem(
+                icon: Container(
+                  width: 1000,
+                  child: Icon(Icons.home),
+//                  color: Colors.black,
                 ),
-                activeIcon: SvgPicture.asset(
-                  e.activeIcon,
-                  width: 24.0,
+                activeIcon: Container(
+                  width: 1000,
+                  child: Icon(
+                    Icons.home,
+                    color: Colors.teal,
+                  ),
+//                    color: Colors.red,
                 ),
-                title: Text(e.title),
+                title: new Text('Home'),
               ),
-            )
-            .toList(),
-      ),
+              BottomNavigationBarItem(
+                icon: Padding(
+                  padding: const EdgeInsets.only(right: 30),
+                  child: Container(
+                    width: 1000,
+                    child: Icon(Icons.explore),
+//                    color: Colors.red,
+                  ),
+                ),
+                activeIcon: Padding(
+                  padding: const EdgeInsets.only(right: 30),
+                  child: Container(
+                    width: 1000,
+                    child: Icon(
+                      Icons.explore,
+                      color: Colors.teal,
+                    ),
+//                    color: Colors.red,
+                  ),
+                ),
+                title: new Text('Explore'),
+              ),
+              BottomNavigationBarItem(
+                  icon: Padding(
+                    padding: const EdgeInsets.only(left: 30),
+                    child: Container(
+                      width: 1000,
+                      child: Icon(Icons.move_to_inbox),
+//                    color: Colors.red,
+                    ),
+                  ),
+                  activeIcon: Padding(
+                    padding: const EdgeInsets.only(left: 30),
+                    child: Container(
+                      width: 1000,
+                      child: Icon(
+                        Icons.move_to_inbox,
+                        color: Colors.teal,
+                      ),
+//                    color: Colors.red,
+                    ),
+                  ),
+                  title: Text('Saved')),
+              BottomNavigationBarItem(
+                  icon: Container(
+                    width: 1000,
+                    child: Icon(Icons.person),
+//                    color: Colors.red,
+                  ),
+                  activeIcon: Container(
+                    width: 1000,
+                    child: Icon(
+                      Icons.person,
+                      color: Colors.teal,
+                    ),
+//                    color: Colors.red,
+                  ),
+                  title: Text('Profile')),
+            ],
+//            _navBarList
+//                .map(
+//                  (e) => BottomNavigationBarItem(
+//                    icon: SvgPicture.asset(
+//                      e.icon,
+//                      width: 20.0,
+//                    ),
+//                    activeIcon: SvgPicture.asset(
+//                      e.activeIcon,
+//                      width: 24.0,
+//                    ),
+//                    title: Text(e.title),
+//                  ),
+//                )
+//                .toList(),
+          )),
+      floatingActionButton: FloatingActionButton(
+          backgroundColor: Colors.teal,
+          child: Icon(
+            Icons.mode_edit,
+          ),
+          onPressed: () {}),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
 }
