@@ -4,29 +4,21 @@ import '../models/channel_model.dart';
 import 'channel_card.dart';
 
 class ChannelType extends StatelessWidget {
+  final List<Channel> _channels = channels;
+
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: ListView(
-        children: [
-          Container(
-            height: 70,
-            width: double.infinity,
-            padding: EdgeInsets.only(left: 18.0),
-            child: ListView.builder(
-              itemCount: channels.length,
-              scrollDirection: Axis.horizontal,
-              shrinkWrap: true,
-              itemBuilder: (context, index) {
-                var channel = channels[index];
-                return Container(
-                  margin: EdgeInsets.only(right: 12.0),
-                  child: ChannelCard(channels: channel),
-                );
-              },
-            ),
-          ),
-        ],
+      height: 45.0,
+      child: ListView.builder(
+        scrollDirection: Axis.horizontal,
+        itemCount: _channels.length,
+        itemBuilder: (BuildContext context, int index) {
+          return ChannelCard(
+            channelName: _channels[index].channelName,
+            imagePath: _channels[index].imagePath,
+          );
+        },
       ),
     );
   }

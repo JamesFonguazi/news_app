@@ -5,10 +5,10 @@ import 'package:google_fonts/google_fonts.dart';
 
 import 'channels.dart';
 
-class PrimaryCard extends StatelessWidget {
+class PrimaryCard2 extends StatelessWidget {
   final News news;
 
-  PrimaryCard({this.news});
+  PrimaryCard2({this.news});
 
   @override
   Widget build(BuildContext context) {
@@ -35,19 +35,19 @@ class PrimaryCard extends StatelessWidget {
           Expanded(
             child: Stack(
               children: [
-                Hero(
-                  tag: news.seen,
-                  child: Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15.0),
-                      image: DecorationImage(
-                        image: AssetImage(news.image),
-//                    image: NetworkImage(news.image),
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                  ),
-                ),
+//                Hero(
+//                  tag: news.seen,
+//                  child: Container(
+//                    decoration: BoxDecoration(
+//                      borderRadius: BorderRadius.circular(15.0),
+//                      image: DecorationImage(
+//                        image: AssetImage(news.image),
+////                    image: NetworkImage(news.image),
+//                        fit: BoxFit.cover,
+//                      ),
+//                    ),
+//                  ),
+//                ),
                 Positioned(
                   left: 210.0,
                   bottom: 120.0,
@@ -125,7 +125,7 @@ class PrimaryCard extends StatelessWidget {
                 alignment: Alignment.bottomLeft,
                 child: Icon(
                   Icons.timer,
-                  color: Color(0xFF008080),
+                  color: Colors.teal,
                   size: 15.0,
                 ),
               ),
@@ -145,7 +145,7 @@ class PrimaryCard extends StatelessWidget {
                 alignment: Alignment.bottomLeft,
                 child: Icon(
                   Icons.comment,
-                  color: Color(0xFF008080),
+                  color: Colors.teal,
                   size: 15.0,
                 ),
               ),
@@ -163,7 +163,7 @@ class PrimaryCard extends StatelessWidget {
                 alignment: Alignment.bottomLeft,
                 child: Icon(
                   Icons.remove_red_eye,
-                  color: Color(0xFF008080),
+                  color: Colors.teal,
                   size: 15.0,
                 ),
               ),

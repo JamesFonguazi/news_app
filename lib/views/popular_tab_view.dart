@@ -3,7 +3,11 @@ import 'package:news_app/constants.dart';
 import 'package:news_app/models/news.dart';
 import 'package:news_app/views/read_news_view.dart';
 import 'package:news_app/widgets/primary_card.dart';
+import 'package:news_app/widgets/primary_card2.dart';
+import 'package:news_app/widgets/search_bar.dart';
 import 'package:news_app/widgets/secondary_card.dart';
+import 'package:news_app/widgets/channels.dart';
+import 'package:news_app/widgets/secondary_card2.dart';
 
 class PopularTabView extends StatelessWidget {
   @override
@@ -11,6 +15,7 @@ class PopularTabView extends StatelessWidget {
     return Container(
       child: ListView(
         children: [
+//          ChannelType(),
           Container(
             width: double.infinity,
             height: 300.0,
@@ -30,9 +35,22 @@ class PopularTabView extends StatelessWidget {
                       ),
                     );
                   },
-                  child: Container(
-                    margin: EdgeInsets.only(right: 12.0),
-                    child: PrimaryCard(news: news),
+                  child: Row(
+                    children: [
+                      Container(
+                        margin: EdgeInsets.only(right: 12.0),
+                        child: Row(
+                          children: [
+                            Row(
+                              children: [
+                                PrimaryCard(news: news),
+                              ],
+                            ),
+//                        PrimaryCard2(news: news),
+                          ],
+                        ),
+                      ),
+                    ],
                   ),
                 );
               },
@@ -65,9 +83,34 @@ class PopularTabView extends StatelessWidget {
                 },
                 child: Container(
                   width: double.infinity,
-                  height: 210.0,
+                  height: 123.0,
                   margin: EdgeInsets.symmetric(horizontal: 18.0, vertical: 8.0),
                   child: SecondaryCard(news: recent),
+                ),
+              );
+            },
+          ),
+          ListView.builder(
+            itemCount: recentList.length,
+            scrollDirection: Axis.vertical,
+            shrinkWrap: true,
+            physics: ScrollPhysics(),
+            itemBuilder: (context, index) {
+              var recent = recentList[index];
+              return InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ReadNewsView(news: recent),
+                    ),
+                  );
+                },
+                child: Container(
+                  width: double.infinity,
+                  height: 185.0,
+                  margin: EdgeInsets.symmetric(horizontal: 18.0, vertical: 8.0),
+                  child: SecondaryCard2(news: recent),
                 ),
               );
             },

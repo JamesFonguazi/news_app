@@ -3,9 +3,9 @@ import 'package:news_app/models/news.dart';
 import 'package:news_app/constants.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class SecondaryCard extends StatelessWidget {
+class SecondaryCard2 extends StatelessWidget {
   final News news;
-  SecondaryCard({this.news});
+  SecondaryCard2({this.news});
 
   @override
   Widget build(BuildContext context) {
@@ -20,21 +20,20 @@ class SecondaryCard extends StatelessWidget {
         children: [
           Row(
             children: [
-              Container(
-                width: 90.0,
-                height: 75.0,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12.0),
-                  image: DecorationImage(
-                    image: AssetImage(news.image),
-                    fit: BoxFit.cover,
-                  ),
-                ),
-              ),
-              SizedBox(width: 12.0),
+//              Container(
+//                width: 90.0,
+//                height: 135.0,
+//                decoration: BoxDecoration(
+//                  borderRadius: BorderRadius.circular(12.0),
+//                  image: DecorationImage(
+//                    image: AssetImage(news.image),
+//                    fit: BoxFit.cover,
+//                  ),
+//                ),
+//              ),
               Expanded(
                   child: Padding(
-                padding: EdgeInsets.symmetric(vertical: 6.0),
+                padding: EdgeInsets.symmetric(vertical: 5.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -44,35 +43,39 @@ class SecondaryCard extends StatelessWidget {
                       maxLines: 2,
                       style: kTitleCard,
                     ),
-//                    SizedBox(height: 4.0),
-//                    Text(
-//                      news.subtitle,
-//                      overflow: TextOverflow.ellipsis,
-//                      maxLines: 2,
-//                      style: kDetailContent,
-//                    ),
-                    SizedBox(height: 2.0),
+                    SizedBox(height: 4.0),
+                    Text(
+                      news.subtitle,
+                      overflow: TextOverflow.ellipsis,
+                      maxLines: 2,
+                      style: kDetailContent,
+                    ),
+                    SizedBox(height: 10.0),
                     Row(
                       children: [
-//                        Text(
-//                          "author",
-//                          style: GoogleFonts.lato(
-//                            textStyle: TextStyle(
-//                                color: Colors.grey,
-//                                letterSpacing: .5,
-//                                fontStyle: FontStyle.italic),
-//                          ),
-//                        ),
-
-//                        Text(":"),
-
+                        Text(
+                          "author",
+                          style: GoogleFonts.lato(
+                            textStyle: TextStyle(
+                                color: Colors.grey,
+                                letterSpacing: .5,
+                                fontStyle: FontStyle.italic),
+                          ),
+                        ),
+                        SizedBox(
+                          width: 2,
+                        ),
+                        Text(":"),
+                        SizedBox(
+                          width: 5,
+                        ),
                         Text(
                           news.author,
                           overflow: TextOverflow.ellipsis,
                           maxLines: 2,
                           style: GoogleFonts.lato(
                             textStyle: TextStyle(
-                                color: Color(0xFF008080),
+                                color: Colors.teal,
                                 letterSpacing: .5,
                                 fontWeight: FontWeight.bold),
                           ),
@@ -82,57 +85,40 @@ class SecondaryCard extends StatelessWidget {
                         ),
                       ],
                     ),
-//                    Row(
-//                      children: [
-////                        Text(
-////                          "channel name",
-////                          style: GoogleFonts.lato(
-////                            textStyle: TextStyle(
-////                                color: Colors.grey,
-////                                letterSpacing: .5,
-////                                fontStyle: FontStyle.italic),
-////                          ),
-////                        ),
-////                        SizedBox(
-////                          width: 2,
-////                        ),
-////                        Text(":"),
-//                        SizedBox(
-//                          width: 5,
-//                        ),
-////                        Container(
-////                          height: 21,
-//////                          width: double.infinity,
-////                          width: 100,
-//////                          color: Color(0xFF008080),
-//////                          color: Colors.red,
-////                          decoration: BoxDecoration(
-////                            color: Color(0xFF008080),
-////                            borderRadius: BorderRadius.circular(5.0),
-////                            border: Border.all(color: kGrey3, width: 1.0),
-////                          ),
-////                          child: Row(
-////                            mainAxisAlignment: MainAxisAlignment.center,
-////                            children: [
-////                              Text(
-////                                news.channel,
-////                                overflow: TextOverflow.ellipsis,
-////                                maxLines: 1,
-////                                style: GoogleFonts.lato(
-////                                  textStyle: TextStyle(
-////                                      color: Colors.white,
-////                                      letterSpacing: .5,
-////                                      fontWeight: FontWeight.bold),
-////                                ),
-////                              ),
-////                            ],
-////                          ),
-////                        ),
-//                        SizedBox(
-//                          width: 5,
-//                        ),
-//                      ],
-//                    ),
+                    Row(
+                      children: [
+                        Text(
+                          "channel name",
+                          style: GoogleFonts.lato(
+                            textStyle: TextStyle(
+                                color: Colors.grey,
+                                letterSpacing: .5,
+                                fontStyle: FontStyle.italic),
+                          ),
+                        ),
+                        SizedBox(
+                          width: 2,
+                        ),
+                        Text(":"),
+                        SizedBox(
+                          width: 5,
+                        ),
+                        Text(
+                          news.channel,
+                          overflow: TextOverflow.ellipsis,
+                          maxLines: 2,
+                          style: GoogleFonts.lato(
+                            textStyle: TextStyle(
+                                color: Colors.teal,
+                                letterSpacing: .5,
+                                fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                        SizedBox(
+                          width: 5,
+                        ),
+                      ],
+                    ),
                   ],
                 ),
               )),
