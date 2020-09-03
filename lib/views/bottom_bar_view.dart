@@ -148,6 +148,7 @@ class _BottomBarViewState extends State<BottomBarView>
                             colors: [
                               FintnessAppTheme.nearlyDarkBlue,
 //                              HexColor('#6A88E5'),
+                              Color(0xFF008080),
                             ],
                             begin: Alignment.topLeft,
                             end: Alignment.bottomRight),
@@ -162,18 +163,18 @@ class _BottomBarViewState extends State<BottomBarView>
                       ),
 
                       child: Material(
-                        color: Colors.blue,
+                        color: Colors.transparent,
                         child: InkWell(
-                          splashColor: Colors.white.withOpacity(0.1),
+                          splashColor: Colors.transparent.withOpacity(0.1),
                           highlightColor: Colors.transparent,
                           focusColor: Colors.transparent,
                           onTap: () {
                             widget.addClick();
                           },
                           child: Icon(
-                            Icons.add,
+                            Icons.mode_edit,
                             color: FintnessAppTheme.white,
-                            size: 32,
+                            size: 30,
                           ),
                         ),
                       ),

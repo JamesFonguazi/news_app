@@ -35,16 +35,13 @@ class PrimaryCard extends StatelessWidget {
           Expanded(
             child: Stack(
               children: [
-                Hero(
-                  tag: news.seen,
-                  child: Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15.0),
-                      image: DecorationImage(
-                        image: AssetImage(news.image),
+                Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15.0),
+                    image: DecorationImage(
+                      image: AssetImage(news.image),
 //                    image: NetworkImage(news.image),
-                        fit: BoxFit.cover,
-                      ),
+                      fit: BoxFit.cover,
                     ),
                   ),
                 ),

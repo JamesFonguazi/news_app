@@ -49,7 +49,7 @@ class ReadNewsView extends StatelessWidget {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15.0),
                   image: DecorationImage(
-                    image: NetworkImage(news.image),
+                    image: AssetImage(news.image),
                     fit: BoxFit.fill,
                   ),
                 ),
@@ -71,7 +71,7 @@ class ReadNewsView extends StatelessWidget {
                     children: [
                       CircleAvatar(
                         radius: 5.0,
-                        backgroundColor: kGrey3,
+                        backgroundColor: Color(0xFF008080),
                       ),
                       SizedBox(width: 6.0),
                       Text(
@@ -82,6 +82,11 @@ class ReadNewsView extends StatelessWidget {
                   ),
                 ),
                 Spacer(),
+                Status(
+                  icon: Icons.comment,
+                  total: news.seen,
+                ),
+                SizedBox(width: 15.0),
                 Status(
                   icon: Icons.remove_red_eye,
                   total: news.seen,
@@ -114,12 +119,66 @@ class ReadNewsView extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 15.0),
-            Text(
-              news.content,
-              style: descriptionStyle,
+            SizedBox(height: 12.0),
+            Align(
+              alignment: Alignment.topLeft,
+              child: Padding(
+                padding: EdgeInsets.only(left: 5.0),
+                child: Text("Summary",
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontStyle: FontStyle.italic)),
+              ),
             ),
-            SizedBox(height: 25.0)
+            SizedBox(height: 1.0),
+            Container(
+              width: double.infinity,
+              height: 123.0,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(15.0),
+                  border: Border.all(color: kGrey3, width: 1.0)),
+              margin: EdgeInsets.symmetric(horizontal: 1.0, vertical: 8.0),
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  news.content,
+                  style: descriptionStyle,
+                ),
+              ),
+            ),
+            SizedBox(height: 15.0),
+            Align(
+              alignment: Alignment.topLeft,
+              child: Padding(
+                padding: EdgeInsets.only(left: 5.0),
+                child: Text("Article",
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontStyle: FontStyle.italic)),
+              ),
+            ),
+            SizedBox(height: 1.0),
+            Container(
+              width: double.infinity,
+              height: 123.0,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(15.0),
+                  border: Border.all(color: kGrey3, width: 1.0)),
+              margin: EdgeInsets.symmetric(horizontal: 1.0, vertical: 8.0),
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  news.content,
+                  style: descriptionStyle,
+                ),
+              ),
+            ),
+            SizedBox(height: 15.0),
+//            Text(
+//              news.content,
+//              style: descriptionStyle,
+//            ),
+//            SizedBox(height: 25.0)
           ],
         ),
       ),
@@ -135,7 +194,7 @@ class Status extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Icon(icon, color: kGrey2),
+        Icon(icon, color: Color(0xFF008080)),
         SizedBox(width: 4.0),
         Text(total, style: kDetailContent),
       ],

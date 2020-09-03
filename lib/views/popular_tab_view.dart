@@ -35,22 +35,9 @@ class PopularTabView extends StatelessWidget {
                       ),
                     );
                   },
-                  child: Row(
-                    children: [
-                      Container(
-                        margin: EdgeInsets.only(right: 12.0),
-                        child: Row(
-                          children: [
-                            Row(
-                              children: [
-                                PrimaryCard(news: news),
-                              ],
-                            ),
-//                        PrimaryCard2(news: news),
-                          ],
-                        ),
-                      ),
-                    ],
+                  child: Container(
+                    margin: EdgeInsets.only(right: 12.0),
+                    child: PrimaryCard(news: news),
                   ),
                 );
               },

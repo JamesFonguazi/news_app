@@ -68,17 +68,17 @@ class _BottomNavState extends State<BottomNav> with TickerProviderStateMixin {
           child: Container(
             height: 65.0,
             width: 70.0,
-            child: FittedBox(
-              child: FloatingActionButton(
-                  backgroundColor: Color(0xFF008080),
-                  child: Icon(
-                    Icons.mode_edit,
-                  ),
-                  onPressed: () {}),
-            ),
+//            child: FittedBox(
+////              child: FloatingActionButton(
+////                  backgroundColor: Color(0xFF008080),
+////                  child: Icon(
+////                    Icons.mode_edit,
+////                  ),
+////                  onPressed: () {}),
+//                ),
           ),
         ),
-        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+//        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       ),
     );
   }
